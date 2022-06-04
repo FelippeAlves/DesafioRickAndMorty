@@ -1,0 +1,28 @@
+@import "../../assets/scss/variables";
+
+.container{
+    max-height: 90px;
+    background-color: $color-black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .logo-container{
+        display: flex;
+    }
+
+    .menu{
+        
+        .buttons{
+            color: $color-cyan;
+            text-decoration: none;
+            font-size: $text-m;
+        }
+
+        .space-itens{
+            margin-right: 50px;
+        }
+    }
+
+}
