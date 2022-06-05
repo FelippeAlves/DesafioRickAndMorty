@@ -1,3 +1,209 @@
-.teste{
+@import  "../../assets/scss/variables";
 
+.m-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin-top: 75px;
+
+    .content{
+        font-weight: $bold;
+        color: $color-cyan;
+        font-size: $text-xp;
+        text-align: center;
+        margin-bottom: 50px;
+        line-height: 38.13px
+    }
+
+    .forms-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .first-description{
+            font-size: $text-s;
+            color: $color-cyan;
+            margin-left: 20px;
+            background: $color-white;
+            position: relative;
+            padding: 0 4px;
+        }
+
+        .description{
+            font-size: $text-s;
+            color: $color-cyan;
+            margin-left: 20px;
+            background: $color-white;
+            padding: 0 4px;
+        }
+
+        .box-form{
+            border: solid 1px $color-cyan;
+            border-radius: 4px;
+            width: 320px;
+            height: 55px;
+            margin-top: -12px;
+            display: flex;
+            justify-content: space-around;
+
+            .input-text {
+                width: 220px;
+                height: 100%;
+                outline: none;
+                font-size: 1rem;
+            }
+
+            .trailing-icon{
+                width: 30px;
+            }
+        }
+
+        .small-box-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .box-form-small{
+            border: solid 1px $color-cyan;
+            border-radius: 4px;
+            width: 320px;
+            height: 45px;
+            margin-top: -12px;
+            display: flex;
+            justify-content: space-evenly;
+
+            .input-text{
+                width: 80%;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                color: $color-cyan;
+                font-weight: $bold;
+            }
+
+            .arrow-down{
+                width: 12px;
+            }
+
+            .x-icon{
+                width: 22px;
+                height: 22px;
+                align-self: center;
+            }
+        }
+
+        .statusOpen{
+            display: block;
+            width: 320px;
+            flex-direction: column;
+            list-style: none;
+            position: absolute;
+            text-align: center;
+
+            li{
+                padding: 8px;
+                box-shadow: 1px 1px 5px #12B0C9;
+                border-radius: 4px;
+                color: $color-cyan;
+                background: $color-white;
+            }
+
+            li:hover{
+                background-color: $color-cyan;
+                color: $color-white;
+                cursor: pointer;
+                z-index: 10;
+            }
+        }
+
+        .statusClose{
+            display: none;
+        }
+    }
+
+    .img-container{
+        display: flex;
+        justify-content: center;
+        margin-top: 130px;
+    }
+
+    .footer{
+        display: flex;
+        justify-content: center;
+        margin: 5px 0 3vh 0;
+    }
+
+    
+    @media screen and (min-width: 600px) {
+
+        .forms-container{
+            display: flex;
+            flex-direction: column;
+
+            .box-form{
+                border: solid 1px $color-cyan;
+                border-radius: 4px;
+                width: 495px;
+                height: 55px;
+                margin-top: -12px;
+                display: flex;
+                justify-content: space-around;
+
+                .input-text{
+                    width: 400px;
+                    height: 100%;
+                    outline: none;
+                    font-size: $text-s;
+                    color: $color-cyan;
+                    font-weight: $bold;
+                }
+    
+                .trailing-icon{
+                    width: 30px;
+                }
+            }
+
+            .small-box-container{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .box-form-small{
+                border: solid 1px $color-cyan;
+                border-radius: 4px;
+                width: 240px;
+                height: 45px;
+                margin-top: -12px;
+                display: flex;
+                justify-content: space-evenly;
+    
+                .input-text{
+                    width: 80%;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    color: $color-cyan;
+                    font-weight: $bold;
+                }
+                
+                .arrow-down{
+                    width: 12px;
+                }
+
+                .x-icon{
+                    width: 22px;
+                    height: 22px;
+                    align-self: center;
+                }
+            }
+
+            .statusOpen{
+                width: 240px;
+            }
+        }
+    }
 }

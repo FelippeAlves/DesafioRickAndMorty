@@ -5,6 +5,8 @@ $color-green: #1D9D2A;
 $color-gray: #F5F5F5;
 $color-red: #B53423;
 
+$bold: 700;
+
 $text-xxs: 0.75rem; /* 12px */
 $text-xs: 0.875rem; /* 14px */
 $text-s: 1rem; /* 16px */
@@ -22,4 +24,10 @@ $text-xxp: 2.75rem; /* 44px */
     font-family: 'Open Sans';
     font-style: normal;
     line-height: 25px;
+}
+
+main{
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
 }
