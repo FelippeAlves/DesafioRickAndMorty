@@ -1,0 +1,46 @@
+@import "../../assets/scss/variables";
+
+.container{
+    max-height: 90px;
+    background-color: $color-black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo-container{
+        display: flex;
+    }
+
+    .menu{
+        display: none;
+
+        .buttons{
+            color: $color-cyan;
+            text-decoration: none;
+            font-size: $text-m;
+        }
+
+        .space-itens{
+            margin-right: 50px;
+        }
+    }
+    
+    @media screen and (min-width: 1024px) {
+        
+        .menuMobile{
+            display: none;
+        }
+
+        .menu{
+            display: block;
+        }
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container{
+        justify-content: space-around;
+    }
+}
