@@ -367,13 +367,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-    
+
             .card-modal {
                 width: 1000px;
                 height: 600px;
                 background: #24282F;
                 border-radius: 15px;
-    
+
                 .button-close-modal {
                     color: $color-gray;
                     font-size: $text-xxp;
@@ -382,36 +382,36 @@
                     padding: 20px;
                     cursor: pointer;
                 }
-    
+
                 .img-modal {
                     width: 250px;
                     height: 250px;
                     border-radius: 10px;
                 }
-    
+
                 .orientation {
                     display: flex;
                     margin: 0px 0 30px 60px;
                     flex-direction: row;
-    
+
                     .description-card {
                         display: flex;
                         flex-direction: column;
                         margin-left: 30px;
                     }
-    
+
                     .person-name {
                         color: $color-yellow;
                         font-size: $text-xxp;
                         font-weight: $bold;
                         margin-bottom: 15px;
                     }
-    
+
                     .status-orientation {
                         display: flex;
                         align-items: center;
                         margin-bottom: 14px;
-    
+
                         .Alive {
                             width: 12px;
                             height: 12px;
@@ -419,7 +419,7 @@
                             background: $color-green;
                             margin-right: 10px;
                         }
-    
+
                         .Dead {
                             width: 12px;
                             height: 12px;
@@ -427,7 +427,7 @@
                             background: $color-red;
                             margin-right: 10px;
                         }
-    
+
                         .unknown {
                             width: 12px;
                             height: 12px;
@@ -435,77 +435,77 @@
                             background: $color-gray;
                             margin-right: 10px;
                         }
-    
+
                         .status-description {
                             font-size: $text-s;
                             color: $color-white;
                         }
-    
+
                     }
-    
+
                     .sub-description {
                         color: $color-white;
                         font-size: $text-s;
                         opacity: 0.4;
                     }
-    
+
                     .description-content {
                         color: $color-white;
                         font-size: $text-s;
                         margin-bottom: 14px;
                     }
-    
-    
+
+
                 }
-    
+
                 .persons-container {
                     display: flex;
                     width: 100%;
                     justify-content: flex-end;
-    
+
                     .persons-orientation {
                         display: flex;
                         flex-direction: column;
-    
+
                         .persons-title {
                             color: $color-cyan;
                             font-size: $text-m;
                             align-self: initial;
                         }
-    
+
                         .img-orientation {
                             display: flex;
                         }
-    
+
                         .img-card-orientation {
                             display: flex;
                             margin-top: 10px;
-    
+
                             .img-card {
                                 display: flex;
                                 flex-direction: column;
                                 margin-right: 20px;
-    
+
                                 .img-rel {
                                     width: 130px;
                                     height: 130px;
                                     background: gray;
                                     border-radius: 10px;
                                 }
-    
+
                                 .name-description {
                                     color: $color-white;
                                     font-size: $text-s;
                                     margin-top: 5px;
                                 }
                             }
-    
+
                         }
-    
+
                     }
-    
+
                 }
-    
+
             }
         }
     }
@@ -528,6 +528,33 @@
         .organize {
             max-width: 88%;
             padding-top: 20px;
+
+            .btn-page-orientation {
+                display: flex;
+                justify-content: center;
+
+                .btn-page {
+                    width: 10px;
+                    height: 10px;
+                    background: $color-light-gray;
+                    margin: 30px 5px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                .btn-active {
+                    width: 20px;
+                    height: 10px;
+                    background: $color-cyan;
+                    margin: 30px 5px;
+                    border-radius: 15%;
+                }
+
+                .btn-page:hover {
+                    -webkit-box-shadow: 0px 0px 25px 7px $color-cyan;
+                    box-shadow: 0px 0px 10px 2px $color-cyan;
+                }
+            }
 
             .title-result {
                 color: $color-white;

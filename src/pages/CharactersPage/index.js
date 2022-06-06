@@ -22,6 +22,13 @@ function CharactersPage() {
   const [modal, setModal] = useState(false)
   const [rel, setRel] = useState([])
   const [isError, setIsError] = useState(false)
+  const itensPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(0)
+  const [pages, setPages] = useState('')
+  const startIndex = currentPage * itensPerPage;
+  const endIndex = startIndex + itensPerPage;
+  const currentItens = data.slice(startIndex, endIndex);
+
 
   const selectStatus = () => {
     setStatusVisible(!statusVisible)
@@ -51,6 +58,7 @@ function CharactersPage() {
     }
     if (url) {
       const characters = await searchCharacter(url);
+      setPages(Math.ceil(characters.results.length / itensPerPage))
       if (characters?.error) {
         setIsError(true)
         return
@@ -75,6 +83,15 @@ function CharactersPage() {
       setRel([])
     }
     setModal(true)
+  }
+
+  function scrollSmooth(e) {
+    setCurrentPage(Number(e.target.value));
+    const to = document.querySelector('.title-result').offsetTop;
+    window.scroll({
+      top: to,
+      behavior: "smooth",
+    });
   }
 
   return <>
@@ -162,7 +179,7 @@ function CharactersPage() {
                 <div className='button-close-modal' onClick={() => setModal(false)}>X</div>
                 <div className='orientation'>
                   <div>
-                    <img className='img-modal' src={chart.image} alt='Imagem do personagem em destaque'/>
+                    <img className='img-modal' src={chart.image} alt='Imagem do personagem em destaque' />
                   </div>
                   <div className='description-card'>
                     <label className='person-name'> {chart.name} </label>
@@ -194,7 +211,7 @@ function CharactersPage() {
                                 return (
                                   <div className='img-card-orientation'>
                                     <div className='img-card'>
-                                      <img className='img-rel' src={char.image} alt='Imagem de um persogem relacionado ao personagem em destaque'/>
+                                      <img className='img-rel' src={char.image} alt='Imagem de um persogem relacionado ao personagem em destaque' />
                                       <span className='name-description'> {char.name} </span>
                                     </div>
                                   </div>
@@ -222,7 +239,7 @@ function CharactersPage() {
               </div>
               <div className='cards-view'>
                 {
-                  data?.map((character) => {
+                  currentItens?.map((character) => {
                     return (
                       <>
                         <div className='cards-fill' key={character.id} onClick={() => handleModal(character.id)}>
@@ -242,6 +259,15 @@ function CharactersPage() {
                       </>
                     )
                   })
+                }
+              </div>
+              <div className='btn-page-orientation'>
+                {
+                  Array.from(
+                    Array(pages), (item, index) => {
+                      return <button value={index} onClick={(e) => scrollSmooth(e)} className={index === currentPage ? 'btn-active' : 'btn-page'}></button>
+
+                    })
                 }
               </div>
             </div>
@@ -266,7 +292,7 @@ function CharactersPage() {
     ) : (
       <>
         <div className='img-container'>
-          <img src={imgCharacter} alt='Imagem dos personagens de desenho rick e morty'/>
+          <img src={imgCharacter} alt='Imagem dos personagens de desenho rick e morty' />
         </div><div className='footer'>
           <span>©rickandmortyapi.com</span>
         </div>
