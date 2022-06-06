@@ -93,7 +93,7 @@ function CharactersPage() {
             </label>
             <div className='box-form'>
               <input className='input-text' type="text" onChange={(event) => setName(event.target.value)} />
-              <img className='trailing-icon' src={trailing} onClick={() => fetchCharacters()} />
+              <img className='trailing-icon' alt='ícone de lupa para busca' src={trailing} onClick={() => fetchCharacters()} />
             </div>
           </div>
 
@@ -105,9 +105,9 @@ function CharactersPage() {
               <div className='box-form-small'>
                 <label className='input-text' id='status' onClick={() => selectStatus()}> {status} </label>
                 {status ? (
-                  <img className='x-icon' onClick={() => setStatus('')} src={xIcon} />
+                  <img className='x-icon' alt='ícone para deletar o campo' onClick={() => setStatus('')} src={xIcon} />
                 ) : (
-                  <img className='arrow-down' src={arrow} onClick={() => selectStatus()} />
+                  <img className='arrow-down' alt='ícone de seleção para baixo' src={arrow} onClick={() => selectStatus()} />
                 )}
               </div>
               <ul className={statusVisible ? 'statusOpen' : 'statusClose'}>
@@ -133,9 +133,9 @@ function CharactersPage() {
               <div className='box-form-small'>
                 <label className='input-text' onClick={() => selectGender()}> {gender} </label>
                 {gender ? (
-                  <img className='x-icon' onClick={() => setGender('')} src={xIcon} />
+                  <img className='x-icon' alt='ícone para deletar o campo' onClick={() => setGender('')} src={xIcon} />
                 ) : (
-                  <img className='arrow-down' src={arrow} onClick={() => selectGender()} />
+                  <img className='arrow-down' alt='ícone de seleção para baixo' src={arrow} onClick={() => selectGender()} />
                 )}
               </div>
               <ul className={genderVisible ? 'statusOpen' : 'statusClose'}>
@@ -162,7 +162,7 @@ function CharactersPage() {
                 <div className='button-close-modal' onClick={() => setModal(false)}>X</div>
                 <div className='orientation'>
                   <div>
-                    <img className='img-modal' src={chart.image} />
+                    <img className='img-modal' src={chart.image} alt='Imagem do personagem em destaque'/>
                   </div>
                   <div className='description-card'>
                     <label className='person-name'> {chart.name} </label>
@@ -194,7 +194,7 @@ function CharactersPage() {
                                 return (
                                   <div className='img-card-orientation'>
                                     <div className='img-card'>
-                                      <img className='img-rel' src={char.image} />
+                                      <img className='img-rel' src={char.image} alt='Imagem de um persogem relacionado ao personagem em destaque'/>
                                       <span className='name-description'> {char.name} </span>
                                     </div>
                                   </div>
@@ -266,7 +266,7 @@ function CharactersPage() {
     ) : (
       <>
         <div className='img-container'>
-          <img src={imgCharacter} />
+          <img src={imgCharacter} alt='Imagem dos personagens de desenho rick e morty'/>
         </div><div className='footer'>
           <span>©rickandmortyapi.com</span>
         </div>

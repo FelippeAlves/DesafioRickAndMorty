@@ -5,16 +5,21 @@ import './styles.scss'
 
 export default function FamousPlaces() {
     const [data, setData] = useState('')
+    const [itens, setItens] = useState([])
+    const [pages, setPages] = useState(1)
+
+
 
     useEffect(() => {
+        console.log(pages);
         getLocations()
 
-    }, [])
+    }, [pages])
 
     async function getLocations() {
-        const locations = await getAllLocations()
-
-        setData(locations)
+        const locations = await getAllLocations(pages)
+        let newList = [...data, ...locations]
+        setData(newList)
     }
 
     return (
@@ -33,8 +38,8 @@ export default function FamousPlaces() {
                                         return <>
                                             <div className='card'>
                                                 <div className='card-description'>
-                                                    <label className='origin-place'> { loc.name } </label>
-                                                    <label className='location-place'> { loc.dimension } </label>
+                                                    <label className='origin-place'> {loc.name} </label>
+                                                    <label className='location-place'> {loc.dimension} </label>
                                                 </div>
                                                 <img className='card-img' src={loc.character.image} />
                                             </div>
@@ -43,6 +48,13 @@ export default function FamousPlaces() {
                                 )
                             }
                         </div>
+                        {
+                            pages < 6 ? (
+                                <div className='btn-more'>
+                                    <button className='see-more' onClick={() => setPages(pages + 1)}>Ver mais</button>
+                                </div>
+                            ) : null
+                        }
                     </div>
                 </div>
             </main>

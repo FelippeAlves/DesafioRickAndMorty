@@ -7,6 +7,19 @@
 
     .famous-content {
 
+        .btn-more{
+            display: flex;
+            justify-content: center;
+            margin: 40px 0 80px 0;
+
+
+            .see-more {
+                background: transparent;
+                font-weight: $semi-bold;
+                font-size: $text-l;
+                cursor: pointer;
+            }
+        }
 
         .title {
             text-align: center;

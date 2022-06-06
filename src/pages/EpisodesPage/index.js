@@ -8,17 +8,36 @@ export default function EpisodesPage() {
     const [season, setSeason] = useState('Temporada 1')
     const [select, setSelect] = useState(false)
     const [episodesList, setEpisodesList] = useState([])
+    const itensPerPage = 6
+    const [currentPage, setCurrentPage] = useState(0)
+    const [pages, setPages] = useState(0)
+    let startIndex = 0;
+    let endIndex = 5;
+    const [currentItens, setCurrentItens] = useState([])
+
 
     useEffect(() => {
         getEpisodesList(season)
 
     }, [season])
+    useEffect(() => {
+        
+        
+    }, [currentPage])
 
     async function getEpisodesList(temp) {
         const epList = await getEpisodesBySeason(temp);
         setEpisodesList(epList)
+        setPages(Math.ceil(epList.length / 6))
+        setCurrentItens(epList.slice(startIndex, endIndex));
     }
 
+    async function getMoreItens() {
+        setCurrentPage(currentPage + 1)
+        endIndex += itensPerPage;
+        const slice = episodesList.slice(startIndex, endIndex)
+        setCurrentItens(slice)
+    }
 
     return (
         <>
@@ -36,22 +55,27 @@ export default function EpisodesPage() {
                                 <li onClick={() => {
                                     setSeason('Temporada 1')
                                     setSelect(false)
+                                    setCurrentPage(0)
                                 }}>Temporada 1</li>
                                 <li onClick={() => {
                                     setSeason('Temporada 2')
                                     setSelect(false)
+                                    setCurrentPage(0)
                                 }}>Temporada 2</li>
                                 <li onClick={() => {
                                     setSeason('Temporada 3')
                                     setSelect(false)
+                                    setCurrentPage(0)
                                 }}>Temporada 3</li>
                                 <li onClick={() => {
                                     setSeason('Temporada 4')
                                     setSelect(false)
+                                    setCurrentPage(0)
                                 }}>Temporada 4</li>
                                 <li onClick={() => {
                                     setSeason('Temporada 5')
                                     setSelect(false)
+                                    setCurrentPage(0)
                                 }}>Temporada 5</li>
                             </ul>
                         }
@@ -59,7 +83,7 @@ export default function EpisodesPage() {
                     <div className='cards-orientation'>
                         {
                             episodesList.length ? (
-                                episodesList.map((ep) => {
+                                currentItens.map((ep) => {
                                     return (
                                         <div className='card-ep-container'>
                                             <div className='card-ep-description'>
@@ -71,6 +95,14 @@ export default function EpisodesPage() {
                                         </div>
                                     )
                                 })
+                            ) : null
+                        }
+
+                        {
+                            pages && currentPage < (pages -1) ? (
+                                <>
+                                    <span className='see-more' onClick={() => {getMoreItens()}}>Ver mais</span>
+                                </>
                             ) : null
                         }
                     </div>
