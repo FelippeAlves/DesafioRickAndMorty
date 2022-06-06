@@ -13,8 +13,8 @@ export default function MenuMobile() {
       <div className={active ? "menuOpen" : "menuClose"}>
         <nav className="list">
           <Link className='buttons space-itens' to="/personagens">Personagens</Link>
-          <Link className='buttons space-itens' to="/personagens">Lugares Famosos</Link>
-          <Link className='buttons' to="/personagens">Episódios</Link>
+          <Link className='buttons space-itens' to="/lugares-famosos">Lugares Famosos</Link>
+          <Link className='buttons' to="/episodios">Episódios</Link>
         </nav> 
       </div>
     </>

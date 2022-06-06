@@ -10,12 +10,12 @@ export default function Header() {
         <>
             <div className="container">
                 <div className="logo-container">
-                    <img src={ logo } />
+                    <Link to="/"><img src={ logo } /></Link>
                 </div>
                 <nav className="menu">
                     <Link className='buttons space-itens' to="/personagens">Personagens</Link>
-                    <Link className='buttons space-itens' to="/personagens">Lugares Famosos</Link>
-                    <Link className='buttons' to="/personagens">Episódios</Link>
+                    <Link className='buttons space-itens' to="/lugares-famosos">Lugares Famosos</Link>
+                    <Link className='buttons' to="/episodios">Episódios</Link>
                 </nav>
                 <div className='menuMobile'>
                     <MenuMobile />
