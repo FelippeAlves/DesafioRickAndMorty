@@ -29,7 +29,7 @@ Conforme cronograma, o desenvolvimento é permitido dentro de um prazo de 72h.
 
 ## Entregas :white_check_mark:
 
-### Front-end 15/03:
+### Front-end 06/06:
 
 - [Versão completa] Página Home
 - [Versão completa] Página de busca de personagens 
