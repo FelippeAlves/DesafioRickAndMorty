@@ -99,7 +99,7 @@ function CharactersPage() {
     <main>
       <div className='m-container'>
         <div className='content'>
-          <span>
+          <span data-testid='title'>
             Buscar personagem
           </span>
         </div>
@@ -109,7 +109,7 @@ function CharactersPage() {
               Buscar Personagens
             </label>
             <div className='box-form'>
-              <input className='input-text' type="text" onChange={(event) => setName(event.target.value)} />
+              <input data-testid='input-text' id='inpu-text' className='input-text' type="text" onChange={(event) => setName(event.target.value)} />
               <img className='trailing-icon' alt='ícone de lupa para busca' src={trailing} onClick={() => fetchCharacters()} />
             </div>
           </div>
@@ -119,7 +119,7 @@ function CharactersPage() {
               <label className='description'>
                 Status
               </label>
-              <div className='box-form-small'>
+              <div data-testid='select-status' className='box-form-small'>
                 <label className='input-text' id='status' onClick={() => selectStatus()}> {status} </label>
                 {status ? (
                   <img className='x-icon' alt='ícone para deletar o campo' onClick={() => setStatus('')} src={xIcon} />
@@ -147,7 +147,7 @@ function CharactersPage() {
               <label className='description'>
                 Gênero
               </label>
-              <div className='box-form-small'>
+              <div data-testid='select-gender' className='box-form-small'>
                 <label className='input-text' onClick={() => selectGender()}> {gender} </label>
                 {gender ? (
                   <img className='x-icon' alt='ícone para deletar o campo' onClick={() => setGender('')} src={xIcon} />
@@ -292,9 +292,9 @@ function CharactersPage() {
     ) : (
       <>
         <div className='img-container'>
-          <img src={imgCharacter} alt='Imagem dos personagens de desenho rick e morty' />
+          <img data-testid='image' src={imgCharacter} alt='Imagem dos personagens de desenho rick e morty' />
         </div><div className='footer'>
-          <span>©rickandmortyapi.com</span>
+          <span data-testid='footer'>©rickandmortyapi.com</span>
         </div>
       </>
     )}

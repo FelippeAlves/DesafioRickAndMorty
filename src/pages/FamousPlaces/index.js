@@ -11,7 +11,6 @@ export default function FamousPlaces() {
 
 
     useEffect(() => {
-        console.log(pages);
         getLocations()
 
     }, [pages])
@@ -29,14 +28,14 @@ export default function FamousPlaces() {
                 <div className='famous-container'>
                     <div className='famous-content'>
                         <div className='title'>
-                            <lavel>Lugares Famosos de Rick & Morty</lavel>
+                            <label data-testid='title'>Lugares Famosos de Rick & Morty</label>
                         </div>
                         <div className='cards-container'>
                             {
                                 data && (
                                     data.map((loc) => {
                                         return <>
-                                            <div className='card'>
+                                            <div data-testid='card' className='card'>
                                                 <div className='card-description'>
                                                     <label className='origin-place'> {loc.name} </label>
                                                     <label className='location-place'> {loc.dimension} </label>
@@ -51,7 +50,7 @@ export default function FamousPlaces() {
                         {
                             pages < 6 ? (
                                 <div className='btn-more'>
-                                    <button className='see-more' onClick={() => setPages(pages + 1)}>Ver mais</button>
+                                    <button data-testid='btn-see-more' className='see-more' onClick={() => setPages(pages + 1)}>Ver mais</button>
                                 </div>
                             ) : null
                         }
