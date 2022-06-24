@@ -10,12 +10,12 @@ export default function Header() {
         <>
             <div className="container">
                 <div className="logo-container">
-                    <Link to="/"><img src={ logo } /></Link>
+                    <Link data-testid='logo' to="/"><img src={ logo } /></Link>
                 </div>
                 <nav className="menu">
-                    <Link className='buttons space-itens' to="/personagens">Personagens</Link>
-                    <Link className='buttons space-itens' to="/lugares-famosos">Lugares Famosos</Link>
-                    <Link className='buttons' to="/episodios">Episódios</Link>
+                    <Link data-testid='btn-person' className='buttons space-itens' to="/personagens">Personagens</Link>
+                    <Link data-testid='btn-places' className='buttons space-itens' to="/lugares-famosos">Lugares Famosos</Link>
+                    <Link data-testid='btn-ep' className='buttons' to="/episodios">Episódios</Link>
                 </nav>
                 <div className='menuMobile'>
                     <MenuMobile />

@@ -12,21 +12,21 @@ const Home = () => {
             <div className="main-container">  
 
                 <div className="title">
-                    <span >
+                    <span data-testid='title'>
                         Está preparado para navegar no mundo de Rick and Morty ?
                     </span>
                 </div> 
 
-                <img className="img-landing" src={ imageLandingPage } />
+                <img data-testid='image' className="img-landing" src={ imageLandingPage } />
 
                 <div className="btn-start">
-                    <Link className="start" to="/personagens">
+                    <Link data-testid='btn-start' className="start" to="/personagens">
                         Inciar Aventura
                     </Link>
                 </div>
 
                 <div className="reference">
-                    <span>
+                    <span data-testid='reference'>
                         ©rickandmortyapi.com
                     </span>
                 </div>

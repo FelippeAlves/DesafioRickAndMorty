@@ -44,8 +44,8 @@ export default function EpisodesPage() {
             <Header />
             <div className='episodes-container'>
                 <div className='episodes-content'>
-                    <div className='episodes-title'> Episódios</div>
-                    <div className='select-container'>
+                    <div data-testid='title' className='episodes-title'> Episódios</div>
+                    <div data-testid='select' className='select-container'>
                         <div className='select-content-orientation' onClick={() => setSelect(!select)}>
                             <div className='season-description'> {season} </div>
                             <img className='arrow-down' alt='seleção para baixo' src={arrow} />
@@ -101,7 +101,7 @@ export default function EpisodesPage() {
                         {
                             pages && currentPage < (pages -1) ? (
                                 <>
-                                    <span className='see-more' onClick={() => {getMoreItens()}}>Ver mais</span>
+                                    <span data-testid='btn-see-more' className='see-more' onClick={() => {getMoreItens()}}>Ver mais</span>
                                 </>
                             ) : null
                         }
